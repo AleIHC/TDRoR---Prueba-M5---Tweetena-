@@ -2,6 +2,15 @@
 
 <h1>Tweets</h1>
 
+<br>
+<br>
+
+<%= form_with url: tweets_path, method: :get do |form| %>
+  <% form.text_field :query_text, placeholder: ('Búsqueda'), value: params[:query_text]%>
+<% end %>
+<br>
+<br>
+
 <div id="tweets">
   <% @tweets.each do |tweet| %>
     <%= render tweet %>
