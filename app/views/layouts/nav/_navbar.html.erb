@@ -1,0 +1,51 @@
+<!--Nav/Sidebar adaptada de https://codepen.io/JFarrow/pen/nJgRga-->
+
+<div class="side-area">
+        <nav class="main-menu">
+            <ul>
+                <li>
+                  <%= link_to  root_path, class: "nav-link active" do %>
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                           Home
+                        </span> 
+                </li>
+                <% end %>
+                <li >
+                    <%= link_to  new_tweet_path, class: "nav-link active" do %>
+                        <i class="fa fa-plus fa-2x"></i>
+                        <span class="nav-text">
+                           New Tweet
+                        </span> 
+                    <%end%>
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-comments fa-2x"></i>
+                        <span class="nav-text">
+                            My Feed
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            Info
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+    </div>

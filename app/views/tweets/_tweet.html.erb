@@ -1,12 +1,38 @@
-<div id="<%= dom_id tweet %>">
-  <p>
-    <strong>Description:</strong>
-    <%= tweet.description %>
-  </p>
+<!--HTML para tweets tomado de https://dev.to/codingnepal/twitter-tweet-box-with-character-limit-highlighting-in-html-css-javascript-2ai8-->
 
-  <p>
-    <strong>Username:</strong>
-    <%= tweet.user_name %>
-  </p>
+ 
+  <div class="row">
+  <div class="col-sm-2 p-0 me-3">
+    <%= image_tag "https://bootdey.com/img/Content/avatar/avatar#{Random.new.rand(1..6)}.png", class:"rounded-circle img-thumbnail" %>
+    <h2 class="tweet-user "><%= tweet.user_name %></h2>
+  </div>
 
+  <div class="wrapper">
+      <div class="col-sm-9 ">
+        <div class="input-box">
+          <div class="tweet-area">
+            <h6 class="card-subtitle mb-2 "><%= tweet.description %></h6>
+          </div>
+        </div>
+        </div>
+        <div class="bottom">
+          <div class="d-flex">
+            <div>
+            </div>
+            <%= button_to  @tweet, method: :delete, id:"destroy-button" do %>
+              <i class="fa-solid fa-x"></i>
+            <% end %>
+            <%= link_to  edit_tweet_path(@tweet), id:"edit-button" do %>
+              <i class="fa-regular fa-pen-to-square"></i>
+            <% end %>
+          </div>
+          <ul class="icons">
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-regular fa-heart"></i></li>
+            <div class="show-tweet-options">
+            </div>
+          </ul>
+        </div>     
+    </div>
 </div>
+

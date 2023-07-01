@@ -1,0 +1,201 @@
+/* Estilos para tweets tomados de https://dev.to/codingnepal/twitter-tweet-box-with-character-limit-highlighting-in-html-css-javascript-2ai8 */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+::selection{
+  color: #fff;
+  background: #FE4F46;
+}
+
+.wrapper{
+  background: #fff;
+  max-width: 700px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 25px 25px 15px 25px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  
+}
+.tweet-user {
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 700;
+}
+.tweet-text {
+  min-height: 180px;
+  min-width: 99%;
+  border: none;
+  padding-top: 10px;
+}
+.tweet-text:focus { 
+  outline: none !important;
+  opacity: 0.8;
+  resize: none;
+}
+.tweet-username {
+  min-height: 20px;
+  min-width: 99%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #e7f5fe;  
+  padding-bottom: 10px;
+}
+.tweet-username:focus { 
+  outline: none !important;
+  opacity: 0.8;
+}
+.input-box{
+  padding-top: 10px;
+  min-width: 99%;
+  border-bottom: 1px solid #e6e6e6;
+}
+.input-box .tweet-area{
+  position: relative;
+  min-height: 180px;
+  min-width: 99%;
+  overflow-y: auto;
+}
+.tweet-area::-webkit-scrollbar{
+  width: 0px;
+}
+
+
+[contentEditable=true]:empty:not(:focus):before{
+  content:attr(placeholder);
+  opacity: 0.5;
+}
+
+.tweet-area .input{
+  outline: none;
+  font-size: 17px;
+  min-height: inherit;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.tweet-area .editable{
+  position: relative;
+  z-index: 5;
+}
+.tweet-area .readonly{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: transparent;
+  background: transparent;
+}
+.readonly .highlight{
+  background: #fd9bb0;
+}
+.input-box .privacy{
+  color: #FE4F46;
+  margin: 15px 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.privacy:hover, .icons li:hover{
+  background: #e7f5fe;
+}
+.privacy i{
+  font-size: 18px;
+}
+.privacy span{
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 7px;
+}
+.bottom{
+  display: flex;
+  margin-top: 13px;
+  align-items: center;
+  justify-content: space-between;
+  vertical-align: bottom;
+}
+.bottom .icons{
+  display: inline-flex;
+}
+.icons li{
+  list-style: none;
+  color: #FE4F46;
+  font-size: 20px;
+  margin: 0 2px;
+  height: 38px;
+  width: 38px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+.bottom .content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom .counter{
+  color: #333;
+  display: none;
+  font-weight: 500;
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid #aab8c2;
+}
+.bottom button{
+  padding: 9px 18px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #FE4F46;
+  color: #fff;
+  cursor: pointer;
+  
+  transition: background 0.2s ease;
+}
+
+#destroy-button {
+  background: none;
+  color: #FE4F46;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#edit-button {
+  padding-top: 8px;
+  background: none;
+  color: #FE4F46;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.create-button {
+  padding: 9px 18px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  background: #FE4F46;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+
+/* tweet view */
+
+
+.bottom button.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+.bottom button:hover{
+  background: #FE4F46;
+}
+

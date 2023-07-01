@@ -1,24 +1,55 @@
+<!--HTML para tweets tomado de https://dev.to/codingnepal/twitter-tweet-box-with-character-limit-highlighting-in-html-css-javascript-2ai8-->
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Tweets</h1>
+<h1 class = "display-2 page-title mt-5">Latest Tweets</h1>
 
-<br>
-<br>
-
-<%= form_with url: tweets_path, method: :get do |form| %>
-  <% form.text_field :query_text, placeholder: ('Búsqueda'), value: params[:query_text]%>
-<% end %>
 <br>
 <br>
 
 <div id="tweets">
   <% @tweets.each do |tweet| %>
-    <%= render tweet %>
-    <p>
-      <%= link_to "Show this tweet", tweet %>
-    </p>
+
+  
+ 
+  <div class="row my-5">
+  <div class="col-sm-2 p-0 m-4">
+    <%= image_tag "https://bootdey.com/img/Content/avatar/avatar#{Random.new.rand(1..6)}.png", class:"rounded-circle img-thumbnail" %>
+    <h2 class="tweet-user"><%= tweet.user_name %></h2>
+  </div>
+  <div class="wrapper">
+      <div class="col-sm-12 ">
+        <div class="input-box">
+          <div class="tweet-area">
+            <h6 class="card-subtitle mb-2 "><%= tweet.description %></h6>
+          </div>
+        </div>
+        </div>
+        <div class="bottom">
+          <div class="d-flex">
+            <div>
+            
+            </div>
+            <%= link_to  tweet, class: do %> 
+            <button class="destroy-button" >Show Tweet</button>
+            <%end%>
+           
+          </div>
+          <ul class="icons">
+            <li><i class="fa-solid fa-retweet"></i></li>
+            <li><i class="fa-regular fa-heart"></i></li>
+            <div class="show-tweet-options">
+            </div>
+          </ul>
+        </div>     
+    </div>
+</div>    
   <% end %>
 </div>
 
-<%= raw pagy_nav(@pagy) %>
-<%= link_to "New tweet", new_tweet_path %>
+
+<div class="container my-5 pagination-bar">
+    <%== pagy_bootstrap_nav(@pagy) %>
+</div>
+
+

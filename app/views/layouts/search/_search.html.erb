@@ -1,0 +1,5 @@
+      
+        <%= form_with url: tweets_path, method: :get, class:"d-grid "  do |form| %>
+          <% form.text_field :query_text, placeholder: ('Buscar tweets'), value: params[:query_text], class: "search"%>
+        <% end %>
+   
