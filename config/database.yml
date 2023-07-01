@@ -85,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: twitteena_production
-  username: twitteena
-  password: <%= ENV["TWITTEENA_DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_URL"] %>
