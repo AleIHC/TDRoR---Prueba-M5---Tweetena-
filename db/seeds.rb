@@ -6,5 +6,5 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 100.times do |i|
-    Tweet.create(description: "Thing number #{i + 1}", user_name:"someone#{i + 1}")
+    Tweet.create(description: Faker::Lorem.paragraph(sentence_count: 10, supplemental: true, random_sentences_to_add: 5), user_name:Faker::Name.name )
 end
